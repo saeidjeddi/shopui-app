@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:mytestapp/view/home_screen.dart';
+import 'package:shopme/views/splash_screen.dart';
+
+
+
+
+
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: HomeScreen()
-      )
+
+      home: SplashScreen()
     );
   }
 }

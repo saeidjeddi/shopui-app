@@ -1,4 +1,4 @@
-# mytestapp
+# shopme
 
 A new Flutter project.
 
