@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                                         style: TextStyle(color: Colors.white),
                                       ),
                                     ),
-                                    SizedBox(height: 32),
+                                    SizedBox(height: Get.height / 35),
                                     Row(
                                       children: [
                                         Padding(
@@ -291,75 +291,214 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
 
-SizedBox(height: 16,),
-              SizedBox(
-                width: Get.width,
-                height: Get.height / 2,
-                child: GridView.builder(
-                  itemCount: 4,
-                  shrinkWrap: true,
-                  physics: ClampingScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 8,
-                    childAspectRatio: 1,
-                  ),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      width: Get.width,
-                      height: Get.height / 2,
-                      margin: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        image: DecorationImage(
-                          image: AssetImage(ConstImage.imagenon),
-                          fit: BoxFit.cover,
-                        ),
+              SizedBox(height: 16),
+              GestureDetector(
+                onTap: () {
+                  Get.bottomSheet(
+                    Container(
+                      height: Get.height / 3,
+                      color: Colors.white,
+                      padding: EdgeInsets.zero,
+                      margin: EdgeInsets.zero,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.asset(
+                              ConstImage.imagenon,
+                              width: 150,
+                              height: 250,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+
+                          SizedBox(width: 8),
+
+                          Column(
+                            children: [
+                              SizedBox(
+                                width: 200,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 16,
+                                    left: 16,
+                                  ),
+                                  child: Text(
+                                    'Lorem Ipsum is simply dummy text of the printing andfthshsrthsrthsrhsrhsrthsrhsrth typesetting industry. Lorem Ipsum has been the industry typesetting industry. Lorem Ipsum typesetting industry. Lorem Ipsum ',
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 2,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 35),
+
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 35,
+                                    height: 35,
+                                    decoration: BoxDecoration(
+                                      color: Colors.deepOrange,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(8),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '1',
+                                        style: TextStyle(color: Colors.black),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 8),
+                                  ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text('+'),
+                                  ),
+
+                                  SizedBox(width: 8),
+                                ],
+                              ),
+
+                              SizedBox(height: 32),
+
+                              SizedBox(
+                                width: 200,
+                                height: 60,
+                                child: ElevatedButton(
+                                  onPressed: () {},
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blueAccent,
+                                    foregroundColor: Colors.white,
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 14,
+                                      horizontal: 24,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                  child: Text('Add'),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    );
-                  },
-                ),
+                    ),
+                    backgroundColor: Colors.white,
+                    isScrollControlled: true,
+                  );
+                },
+                child:
+                    // ----------------------------------------------------------------------------
+                    GridView.builder(
+                      padding: const EdgeInsets.all(16),
+                      itemCount: 4,
+                      shrinkWrap: true,
+                      physics: const ClampingScrollPhysics(),
+                      gridDelegate:
+                          SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 8,
+                            mainAxisSpacing: 8,
+                            childAspectRatio: Get.height / 1200,
+                          ),
+                      itemBuilder: (context, index) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.1),
+                                blurRadius: 8,
+                                spreadRadius: 2,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ClipRRect(
+                                borderRadius: const BorderRadius.vertical(
+                                  top: Radius.circular(12),
+                                ),
+                                child: Image.asset(
+                                  ConstImage.imagenon,
+                                  height: 120,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'pizza',
+                                      style: const TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      'Pepperoni pizza',
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 6),
+                                    Text(
+                                      '\$44.5',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                        color: Colors.deepPurple,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 6),
+                                    Row(
+                                      children: [
+                                        const Icon(
+                                          Icons.star,
+                                          color: Colors.amber,
+                                          size: 16,
+                                        ),
+                                        const SizedBox(width: 4),
+                                        Text(
+                                          '4.8',
+                                          style: const TextStyle(fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+
+                // ----------------------------------------------------------------------------
               ),
-              
             ],
           ),
-
-
-
         ),
-
-
-
-
       ),
 
-
- bottomNavigationBar: Container(
-    height: 80,
-    decoration: BoxDecoration(
-      color: const Color.fromARGB(255, 202, 198, 198),
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(8),
-        topRight: Radius.circular(8),
-      ),
-    ),
-    child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Icon(Icons.home, size: 40, color: Colors.blue),
-          Icon(Icons.menu, size: 40, color: Colors.blue),
-          Icon(Icons.post_add, size: 40, color: Colors.blue),
-        ],
-      ),
-    ),
-  ),
-);
- 
-
-
-
+      bottomNavigationBar: BottomNavigationBarCustom(),
+    );
   }
 }
