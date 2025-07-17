@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopme/views/cart/cart.dart';
 import 'package:shopme/views/category/categories.dart';
 import 'package:shopme/views/home/main_screen.dart';
 
@@ -49,7 +50,12 @@ class BottomNavigationBarCustom extends StatelessWidget {
                 onTap: () {
                   Get.to(() => HomeScreen());
                 },
-                child: Icon(CupertinoIcons.home, size: 30, color: Color(0xFF5765C3))),
+                child: Icon(
+                  CupertinoIcons.home,
+                  size: 30,
+                  color: Color(0xFF5765C3),
+                ),
+              ),
               InkWell(
                 onTap: () {
                   Get.to(() => Categories());
@@ -60,7 +66,16 @@ class BottomNavigationBarCustom extends StatelessWidget {
                   color: Color(0xFF868890),
                 ),
               ),
-              Icon(CupertinoIcons.cart, size: 30, color: Color(0xFF868890)),
+              InkWell(
+                onTap: () {
+                  Get.to(() => CartScreen());
+                },
+                child: Icon(
+                  CupertinoIcons.cart,
+                  size: 30,
+                  color: Color(0xFF868890),
+                ),
+              ),
             ],
           ),
         ),

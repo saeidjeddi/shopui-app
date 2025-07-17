@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopme/components/const_image.dart';
 import 'package:shopme/components/widgets.dart';
+import 'package:shopme/views/cart/cart.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -370,7 +371,9 @@ class HomeScreen extends StatelessWidget {
                                 width: 200,
                                 height: 60,
                                 child: ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Get.to(() => CartScreen());
+                                  },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.blueAccent,
                                     foregroundColor: Colors.white,
@@ -401,13 +404,12 @@ class HomeScreen extends StatelessWidget {
                       itemCount: 4,
                       shrinkWrap: true,
                       physics: const ClampingScrollPhysics(),
-                      gridDelegate:
-                          SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 8,
-                            mainAxisSpacing: 8,
-                            childAspectRatio: Get.height / 1200,
-                          ),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 8,
+                        mainAxisSpacing: 8,
+                        childAspectRatio: Get.height / 1200,
+                      ),
                       itemBuilder: (context, index) {
                         return Container(
                           decoration: BoxDecoration(
